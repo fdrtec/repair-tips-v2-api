@@ -8,10 +8,10 @@
 		<version>2.6.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.fdrtec.repair-tips-api-v2</groupId>
-	<artifactId>repairTips</artifactId>
+	<groupId>br.com.fdrtec.api.repairtips</groupId>
+	<artifactId>RepairTipsApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>repairTips</name>
+	<name>RepairTipsApi</name>
 	<description>RepairTips API V2</description>
 	<properties>
 		<java.version>11</java.version>
@@ -19,7 +19,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
 		<dependency>
@@ -36,6 +36,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
