@@ -10,11 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Part {
+public class Category {
 
     private UUID id;
-    private String originTitle;
-    private String ptTitle;
-    private String partNumber;
-
+    private String name;
 }
