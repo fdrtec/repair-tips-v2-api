@@ -1,5 +1,6 @@
 package br.com.fdrtec.repairtipsv2.entities;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
 
@@ -15,15 +16,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Type {
+public class Type implements Serializable{
+    private static final long serialVersionUID = 1L;
     
-    @Id
-    @GeneratedValue()
-    private UUID id;
-    
-    @Column()
-    private String name;
-    
-        
-    
+    @Id    
+    private UUID id;    
+    private String typeName;
+    private Category category;       
 }
+
+/*
+ * {
+ *  name: "Laser",
+ *  category: "Impressora" 
+ * }
+ */
