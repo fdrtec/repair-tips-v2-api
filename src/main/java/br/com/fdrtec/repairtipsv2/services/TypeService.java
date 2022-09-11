@@ -1,5 +1,6 @@
 package br.com.fdrtec.repairtipsv2.services;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -27,11 +28,20 @@ public class TypeService {
 
     public Type findById(UUID id) {
         try {
-            Optional<Type> opt = typeRepository.findById(id);
-            return opt.get();
+            Optional<Type> optionalDTO = typeRepository.findById(id);
+            return optionalDTO.get();
             
         } catch (Exception e) {
             return null;
         }       
+    }
+
+    public Type save(Type type) {
+        try {
+            return typeRepository.save(type);            
+        } catch (Exception e) {
+            return null;
+            // TODO: handle exception
+        }
     }    
 }
