@@ -9,7 +9,9 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fdrtec.repairtipsv2.entities.Type;
+import br.com.fdrtec.repairtipsv2.mapper.DozerMapper;
+import br.com.fdrtec.repairtipsv2.model.dtos.TypeDTO;
+import br.com.fdrtec.repairtipsv2.model.entities.Type;
 import br.com.fdrtec.repairtipsv2.repositories.TypeRepository;
 
 @Service
@@ -36,9 +38,10 @@ public class TypeService {
         }       
     }
 
-    public Type save(Type type) {
+    public TypeDTO save(TypeDTO typeDTO) {
         try {
-            return typeRepository.save(type);            
+            Type type = DozerMapper.parseObject(typeDTO, Type.class);
+            return DozerMapper.parseObject(typeRepository.save(type), TypeDTO.class);            
         } catch (Exception e) {
             return null;
             // TODO: handle exception

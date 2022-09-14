@@ -1,4 +1,4 @@
-package br.com.fdrtec.repairtipsv2.entities;
+package br.com.fdrtec.repairtipsv2.model.entities;
 
 import java.io.Serializable;
 import java.util.UUID;
