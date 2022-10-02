@@ -6,6 +6,11 @@ import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.JoinFormula;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import br.com.fdrtec.repairtipsv2.model.entities.Type;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +26,6 @@ public class CategoryDTO implements Serializable {
     @NotBlank
     private String categoryName;
 
-    private List<TypeDTO> types;
+    @JsonIgnore
+    private List<Type> types;
 }
