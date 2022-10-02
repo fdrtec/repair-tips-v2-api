@@ -12,6 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,6 +34,7 @@ public class Category implements Serializable {
     @Column(nullable = false, length = 200)
     private String categoryName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
-    private List<Type> types = new ArrayList<>() ;
+    private List<Type> types = new ArrayList<>();
 }
