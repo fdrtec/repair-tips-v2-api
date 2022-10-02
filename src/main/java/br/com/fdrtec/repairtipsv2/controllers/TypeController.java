@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.fdrtec.repairtipsv2.model.dtos.TypeDTO;
@@ -40,13 +39,7 @@ public class TypeController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Type> save(@RequestBody @Valid TypeDTO typeDTO) {
+    public ResponseEntity<TypeDTO> save(@RequestBody @Valid TypeDTO typeDTO) {
         return ResponseEntity.ok().body(typeService.save(typeDTO));        
-    }
-
-    // @PostMapping
-    // public @ResponseBody Type newType(@Valid Type type) {
-    //     typeService.save(type);
-    //     return type;
-    // }
+    }    
 }

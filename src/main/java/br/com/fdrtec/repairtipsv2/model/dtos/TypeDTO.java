@@ -16,9 +16,7 @@ public class TypeDTO implements Serializable{
     private UUID id;
     
     @NotBlank   
-    private String typeName;    
-    
-    private CategoryDTO categoryDTO;       
+    private String typeName;           
 }
 
 /*
