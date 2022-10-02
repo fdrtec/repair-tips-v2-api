@@ -18,20 +18,23 @@ import br.com.fdrtec.repairtipsv2.repositories.TypeRepository;
 public class TypeService {
 
     @Autowired
-    private TypeRepository typeRepository;
+    private TypeRepository typeRepository;    
 
-    public List<Type>findAll() {
+    public List<TypeDTO> findAll() {
         try {
-            return typeRepository.findAll();            
+            return DozerMapper.parseListObject(typeRepository.findAll(), TypeDTO.class);
         } catch (Exception e) {
             return null;
-        }        
+        }
     }
 
-    public Type findById(UUID id) {
+    public TypeDTO findById(UUID id) {
         try {
             Optional<Type> optionalDTO = typeRepository.findById(id);
-            return optionalDTO.get();
+            if(optionalDTO.isPresent()){
+                return DozerMapper.parseObject(optionalDTO.get(), TypeDTO.class);
+            }
+            return null;
             
         } catch (Exception e) {
             return null;

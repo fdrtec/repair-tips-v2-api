@@ -27,13 +27,13 @@ public class TypeController {
     private TypeService typeService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Type>> findAll() {        
+    public ResponseEntity<List<TypeDTO>> findAll() {        
         return ResponseEntity.ok()
         .body(typeService.findAll());
     }
     
     @GetMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Type> findById(@PathVariable("id") UUID id) {
+    public ResponseEntity<TypeDTO> findById(@PathVariable("id") UUID id) {
         return ResponseEntity.ok()
         .body(typeService.findById(id));
     }
