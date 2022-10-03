@@ -1,4 +1,4 @@
-package br.com.fdrtec.repairtipsv2.model.entities;
+package br.com.fdrtec.repairtipsv2.domain.entities;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -12,13 +12,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Part implements Serializable {
+public class Manufacturer implements Serializable {
+    
     private static final long serialVersionUID = 1L;
 
-    @Id
+    @Id    
     private UUID id;
-    private String partNameOrigin;
-    private String partNamePT;
-    private String partNumber;
-
+    private String manufacturerName;
+    private String description;
 }

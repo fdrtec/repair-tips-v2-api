@@ -1,4 +1,4 @@
-package br.com.fdrtec.repairtipsv2.model.entities;
+package br.com.fdrtec.repairtipsv2.domain.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,8 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,8 +31,7 @@ public class Category implements Serializable {
     
     @Column(nullable = false, length = 200)
     private String categoryName;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "category")
+    
+    @OneToMany(mappedBy = "category")    
     private List<Type> types = new ArrayList<>();
 }

@@ -7,9 +7,9 @@ import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.fdrtec.repairtipsv2.mapper.DozerMapper;
-import br.com.fdrtec.repairtipsv2.model.dtos.TypeDTO;
-import br.com.fdrtec.repairtipsv2.model.entities.Type;
+import br.com.fdrtec.repairtipsv2.domain.dtos.TypeDTO;
+import br.com.fdrtec.repairtipsv2.domain.entities.Type;
+import br.com.fdrtec.repairtipsv2.mappers.DozerMapper;
 import br.com.fdrtec.repairtipsv2.repositories.TypeRepository;
 
 @Service

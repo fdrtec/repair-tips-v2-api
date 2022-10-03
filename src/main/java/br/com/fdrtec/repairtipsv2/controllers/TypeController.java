@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.fdrtec.repairtipsv2.model.dtos.TypeDTO;
+import br.com.fdrtec.repairtipsv2.domain.dtos.TypeDTO;
 import br.com.fdrtec.repairtipsv2.services.TypeService;
 
 @RestController

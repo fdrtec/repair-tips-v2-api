@@ -1,4 +1,4 @@
-package br.com.fdrtec.repairtipsv2.model.entities;
+package br.com.fdrtec.repairtipsv2.domain.entities;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -32,7 +32,7 @@ public class Type implements Serializable{
     
     @Column(nullable = false, length = 150)       
     private String typeName;     
-    
+        
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;     

@@ -8,8 +8,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import br.com.fdrtec.repairtipsv2.model.entities.Category;
-import br.com.fdrtec.repairtipsv2.model.entities.Type;
+import br.com.fdrtec.repairtipsv2.domain.entities.Category;
+import br.com.fdrtec.repairtipsv2.domain.entities.Type;
 import br.com.fdrtec.repairtipsv2.repositories.CategoryRepository;
 import br.com.fdrtec.repairtipsv2.repositories.TypeRepository;
 
@@ -28,14 +28,22 @@ public class Repairtipsv2Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Category category = new Category(null, "Impressoras", new ArrayList<>());
-		Type laserType = new Type(null, "Laser", category );
-		Type jatoTintaType = new Type(null, "Jato de Tinta", category );
+		Category printer = new Category(null, "Impressoras", new ArrayList<>());
+		Category computer = new Category(null, "Computadores", new ArrayList<>());
 		
-		category.getTypes().addAll(Arrays.asList(laserType, jatoTintaType ));
+		Type laser = new Type(null, "Laser", printer );
+		Type jatoTinta = new Type(null, "Jato de Tinta", printer );
+		Type matricial = new Type(null, "Matricial", printer );
+		Type termica = new Type(null, "Térmica", printer );
+		
+		Type notebook = new Type(null, "Notebook", computer );
+		Type desktop = new Type(null, "PC", computer );
+		
+		printer.getTypes().addAll(Arrays.asList(laser, jatoTinta, matricial, termica ));
+		computer.getTypes().addAll(Arrays.asList(notebook, desktop));
 
-		this.categoryRepository.saveAll(Arrays.asList(category));
-		this.typeRepository.saveAll(Arrays.asList(laserType, jatoTintaType));
+		this.categoryRepository.saveAll(Arrays.asList(printer, computer));
+		this.typeRepository.saveAll(Arrays.asList(laser, jatoTinta, matricial, termica, notebook, desktop));
 	}
 
 }

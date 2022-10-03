@@ -1,4 +1,4 @@
-package br.com.fdrtec.repairtipsv2.mapper;
+package br.com.fdrtec.repairtipsv2.mappers;
 
 import java.util.ArrayList;
 import java.util.List;
